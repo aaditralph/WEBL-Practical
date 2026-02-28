@@ -4,20 +4,25 @@ import Output from "./Output";
 
 function App() {
   const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [favPokemon, setFavPokemon] = useState("");
 
-  function onSubmit(formData) {
-    const name = formData.get("name");
-    const age = formData.get("age");
-    const fav_pokemon = formData.get("fav_pokemon");
+  function onSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    setName(formData.get("name"));
+    setAge(formData.get("age"));
+    setFavPokemon(formData.get("fav_pokemon"));
     setSubmitted(true);
     console.log(name, age, fav_pokemon);
   }
 
   return (
     <>
-      {submitted ? (
+      {!submitted ? (
         <div className="min-h-screen flex items-center justify-center bg-gray-200">
-          <form className="form w-full max-w-sm m-4" action={onSubmit}>
+          <form className="form w-full max-w-sm m-4" onSubmit={onSubmit}>
             <input
               placeholder="Enter your name"
               className="input"
@@ -41,7 +46,9 @@ function App() {
           </form>
         </div>
       ) : (
-        <Output name={name} age={age} favPokemon={fav_pokemon} />
+        <div className="min-h-screen flex items-center justify-center bg-gray-200">
+          <Output name={name} age={age} favPokemon={favPokemon} />
+        </div>
       )}
     </>
   );
