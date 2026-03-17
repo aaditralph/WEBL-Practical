@@ -1,0 +1,13 @@
+<div class="flex-cols justify-content-center">
+  <h2 class="text-center">Anime List</h2>
+
+  <div class="cards-container">
+    <div class="card" *ngFor="let item of items">
+      <img [src]="item.images.jpg.large_image_url" [alt]="item.title" class="card__image" />
+      <div class="card__content">
+        <p class="card__title">{{ item.title }}</p>
+        <p class="card__description">{{ item.synopsis }}</p>
+      </div>
+    </div>
+  </div>
+</div>
