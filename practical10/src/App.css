@@ -1,0 +1,217 @@
+/* Global dark theme already defined in index.css */
+
+/* Tabs navigation */
+.tabs-nav {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.tabs-nav button {
+  padding: 0.5rem 1rem;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 6px;
+  color: var(--text-h);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.tabs-nav button:hover:not(.active) {
+  background: var(--accent-border);
+  box-shadow: var(--shadow);
+}
+
+.tabs-nav button.active {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+
+.app-container {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  color: var(--text-h);
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-bar:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+ .card {
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card h3 {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  color: var(--text-h);
+}
+
+/* Modal styling */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--bg);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 500px) {
+  .modal {
+    max-width: 95%;
+    width: 95%;
+  }
+}
+
+.modal .close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text-h);
+}
+
+.modal-img {
+  max-width: 250px;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
+.modal h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+}
+
+.modal section {
+  margin-bottom: 1.5rem;
+}
+
+.modal section h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--text-h);
+  text-transform: capitalize;
+}
+
+.modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
+
+.modal li {
+  text-transform: capitalize;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Pagination controls */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.pagination button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border);
+  background: var(--accent-bg);
+  color: var(--text-h);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: var(--accent-border);
+  box-shadow: var(--shadow);
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  color: var(--text-h);
+}
